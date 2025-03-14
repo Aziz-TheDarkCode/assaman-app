@@ -1,4 +1,6 @@
+import 'package:assaman/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,10 +11,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+          textTheme: GoogleFonts.rubikTextTheme(Theme.of(context).textTheme)),
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Text('This is onboarding screen'),
+        body: SafeArea(
+          child: OnboardingScreen()
         ),
       ),
     );
